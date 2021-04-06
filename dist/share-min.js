@@ -1,1 +1,0 @@
-function goDownload(o){0===o?window.location.href=android_url:1==o&&(window.location.href=ios_url)}const android_url="https://coalline.com/files/apks/coalline.apk",ios_url="https://itunes.apple.com/cn/app/%E7%9F%A5%E7%85%A4/id1265588811?mt=8";window.onload=function(){document.body.addEventListener("touchstart",function(){})};
