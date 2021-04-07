@@ -14,9 +14,15 @@ module.exports =  {
         rules: [
           {
             test:"/\.js/",
-            use:[
-
-            ]
+            exclude: /node_modules/,
+            // use: {
+            //   loader: 'babel-loader',
+            //   options: {
+            //     presets: [
+            //       ['@babel/preset-env'/* , { targets: "defaults" } */]
+            //     ]
+            //   }
+            // }
           },
           {
             test: /\.css$/,
@@ -70,6 +76,9 @@ module.exports =  {
             chunkFilename: '[id].[contenthash].css',
           }
       )],
+      optimization:{
+        minimize:true, // terser
+      }
 
 }
   
