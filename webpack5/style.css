@@ -1,0 +1,28 @@
+h1{
+    color: red;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+h2{
+    color: orange;
+}
+
+::placeholder{
+    color: orange;
+}
+
+h3 + p {
+    color: red;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#flex{
+    display: flex;
+}
+#grid{display: grid;}
