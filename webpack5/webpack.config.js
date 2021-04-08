@@ -44,7 +44,7 @@ module.exports =  {
               
               // [css-loader](/loaders/css-loader)
               {
-                loader: 'css-loader',
+                loader: 'css-loader', /* ?url=false  忽略url图片等*/
               },
               {
                 loader: "postcss-loader",
