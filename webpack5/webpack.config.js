@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports =  {
       entry: ['./style.css',"./index.js"],
       output: {
-          filename: '[name].[contenthash].js',
+          filename: '[name].js',/* .[contenthash] */
           path: path.resolve(__dirname, 'dist'),
           clean:true
       },
@@ -75,7 +75,16 @@ module.exports =  {
             filename: '[name].[contenthash].css',
             chunkFilename: '[id].[contenthash].css',
           }
-      )],
+        ),
+        {
+          apply(compiler) {
+            compiler.hooks.shouldEmit.tap('Remove styles from output', (compilation) => {
+              delete compilation.assets['main.js'];  // Remove asset. Name of file depends of your entries and 
+              return true;
+            })
+          }
+        }
+      ],
       optimization:{
         minimize:true, // terser
       }
